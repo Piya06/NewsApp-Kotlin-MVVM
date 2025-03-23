@@ -42,32 +42,5 @@ class NetworkModule {
         return retrofit.create(NewsApi::class.java)
     }
 
-   /* @Singleton
-    @Provides
-    fun providesRetrofit(): Retrofit {
-        val logging = HttpLoggingInterceptor()
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY)
-        val client = OkHttpClient.Builder()
-            .addInterceptor(logging)
-            .build()
-
-        return Retrofit.Builder().baseUrl(Constants.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(client)
-            .build()
-    }
-
-    @Singleton
-    @Provides
-    fun providesNewsAPI(retrofitBuilder: Retrofit.Builder): NewsApi {
-        return retrofitBuilder.build().create(NewsApi::class.java)
-    }*/
-
-
-
-/*    @Provides
-    fun providesNewsAPI(retrofitBuilder: Retrofit.Builder, okHttpClient: OkHttpClient): NewsApi {
-        return retrofitBuilder.client(okHttpClient).build().create(NewsApi::class.java)
-    }*/
 
 }

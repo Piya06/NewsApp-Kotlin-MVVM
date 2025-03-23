@@ -20,8 +20,6 @@ import javax.inject.Inject
 @ActivityScoped
 class NewsListAdapter @Inject constructor() : RecyclerView.Adapter<NewsListAdapter.ArticleViewHolder>() {
 
-   // inner class ArticleViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
-
     inner class ArticleViewHolder(val binding: NewsListBinding) : RecyclerView.ViewHolder(binding.root)
 
     private val differCallback = object : DiffUtil.ItemCallback<Article>() {
@@ -83,21 +81,6 @@ class NewsListAdapter @Inject constructor() : RecyclerView.Adapter<NewsListAdapt
             "Invalid Date"
         }
     }
-  /*  override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
-        val article = differ.currentList[position]
-
-        holder.itemView.apply {
-            Glide.with(this).load(article.urlToImage).into(ivArticleImage)
-            tvSource.text = article.source?.name
-            tvTitle.text = article.title
-            tvDescription.text = article.description
-            tvPublishedAt.text = article.publishedAt
-
-            setOnClickListener {
-                onItemClickListener?.let { it(article) }
-            }
-        }
-    }*/
 
     fun setOnItemClickListener(listener: (Article) -> Unit) {
         onItemClickListener = listener

@@ -9,7 +9,4 @@ class NewsRepository @Inject constructor(private val newsApi: NewsApi, private v
     suspend fun getBreakingNews(countryCode: String, pageNumber: Int) =
         newsApi.getBreakingNews(countryCode, pageNumber)
 
-    suspend fun searchNews(searchQuery: String, pageNumber: Int) =
-        newsApi.searchForNews(searchQuery, pageNumber)
-
 }
